@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog App - Post Details</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/libs/bootstrap-5.1.0/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+</head>
+<body>
+    <header th:insert="shared/header::navbar-application"></header>
+    <main>
+        <div class="container" style="width:60%;padding-top:20px">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="posts"><a href="/posts">Posts</a></li>
+                    <li class="breadcrumb-item active" aria-current="detalhes">Detalhes</li>
+                </ol>
+            </nav>
+            <article>
+                <h1 class="bolder mb-4" th:text="${post.titulo}">Spring Clound Zuul</h1>
+                <p class="text-muted bolder mb-1 d-flex align-items-center">
+                    <i class="material-icons">person_outline</i>&nbsp;&nbsp;
+                    <span th:text="${post.autor}"></span>
+                </p>
+                <p class="text-muted bolder mb-0 d-flex align-items-center">
+                    <i class="material-icons">date_range</i>&nbsp;&nbsp;
+                    <span th:text="${post.data}"></span>
+                </p>
+            </article>
+            <section>
+                <p class="card-text mt-5" th:utext="${post.texto}"></p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

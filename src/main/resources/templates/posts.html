@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<hmtl  lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog App - Posts</title>
+        <link rel="stylesheet" href="/libs/bootstrap-5.1.0/css/bootstrap.min.css"/>
+        <script src="/libs/bootstrap-5.1.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/assets/css/styles.css"/>
+    </head>
+    <body>
+        <header th:insert="shared/header::navbar-application"></header>
+        <section>
+           <div class="container" style="width:60%;padding-top:20px">
+               <nav aria-label="breadcrumb">
+                   <ol class="breadcrumb">
+                       <li class="breadcrumb-item active" aria-current="posts"><a href="/posts">Posts</a></li>
+                   </ol>
+               </nav>
+               <div class="card mb-4" th:each="post : ${posts}">
+                   <div class="card-body">
+                       <p class="card-subtitle mb-2 text-muted">
+                           <span th:text="${post.autor}"></span>&nbsp;
+                           <span th:text="${post.data}"></span>
+                       </p>
+                       <h2 th:text="${post.titulo}"></h2>
+                       <p th:utext="${#strings.abbreviate(post.texto,400)}"></p>
+                       <br/>
+                       <button type="button" class="btn btn-primary" th:onclick="|navigate('posts/${post.id}')|">Ver</button>
+                   </div>
+               </div>
+           </div>
+        </section>
+        <script>
+            function navigate(Uri) {
+                window.location.href = Uri
+            }
+        </script>
+    </body>
+</hmtl>
