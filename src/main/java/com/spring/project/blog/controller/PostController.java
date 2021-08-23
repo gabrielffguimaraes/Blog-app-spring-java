@@ -3,6 +3,7 @@ package com.spring.project.blog.controller;
 import com.spring.project.blog.model.entity.Post;
 import com.spring.project.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,18 +34,26 @@ public class PostController {
         details.addObject("post",p);
         return details;
     }
+
     @GetMapping("newpost")
-    public String newPost() {
-        return "postForm";
+    public ModelAndView newPost() {
+        ModelAndView postForm = new ModelAndView("postForm");
+        postForm.addObject("notShow","notShow");
+        return postForm;
     }
 
     @PostMapping("newpost")
-    public String savePost(@Valid @RequestBody Post post,BindingResult result ,RedirectAttributes attributes) {
+    public ModelAndView savePost(@Valid Post post,BindingResult result ,RedirectAttributes attributes) {
+        ModelAndView ret = new ModelAndView();
+
         if(result.hasErrors()) {
-            return "redirect:/newpost";
+            attributes.addFlashAttribute("errors","Erro ao salvar , Campos * obrigatórios devem ser preenchidos .");
+            ret.setViewName("redirect:/newpost");
+            return ret;
         }
         post.setData(LocalDate.now());
         postService.save(post);
-        return "redirect:/posts";
+        ret.setViewName("redirect:/posts");
+        return ret;
     }
 }
