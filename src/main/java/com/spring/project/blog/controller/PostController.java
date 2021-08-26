@@ -57,7 +57,7 @@ public class PostController {
         return ret;
     }*/
     @PostMapping("newpost")
-    public ModelAndView savePost(@Valid Post post) {
+    public ModelAndView savePost(Post post) {
         ModelAndView ret = new ModelAndView();
 
         postService.save(new Post());
