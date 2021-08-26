@@ -57,11 +57,11 @@ public class PostController {
         return ret;
     }*/
     @PostMapping("newpost")
-    public ModelAndView savePost(Post post) {
-        ModelAndView ret = new ModelAndView();
+    public void savePost(Post post) {
+        //ModelAndView ret = new ModelAndView();
 
         postService.save(new Post());
-        ret.setViewName("redirect:posts");
-        return ret;
+        //ret.setViewName("redirect:posts");
+        //return ret;
     }
 }
