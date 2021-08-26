@@ -28,7 +28,7 @@ public class Post {
     private String texto;
 
     @Column(name = "data")
-    private Date data;
+    private String data;
 
     public Long getId() {
         return id;
@@ -54,11 +54,11 @@ public class Post {
         this.autor = autor;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
