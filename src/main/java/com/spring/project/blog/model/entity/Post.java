@@ -21,6 +21,7 @@ public class Post {
     @Column(name = "autor")
     private String autor;
 
+    @Lob
     @Column(name = "texto")
     private String texto;
 
