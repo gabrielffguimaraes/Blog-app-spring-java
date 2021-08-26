@@ -23,7 +23,7 @@ public class Post {
     private String autor;
 
     @NotBlank
-    @Column(name = "texto")
+    @Column(name = "texto",columnDefinition = "text")
     private String texto;
 
     @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
