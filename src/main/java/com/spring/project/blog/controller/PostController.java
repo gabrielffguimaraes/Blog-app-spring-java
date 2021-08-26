@@ -1,7 +1,6 @@
 package com.spring.project.blog.controller;
 
 import com.spring.project.blog.model.entity.Post;
-import com.spring.project.blog.model.repository.PostRepository;
 import com.spring.project.blog.service.PostService;
 import com.spring.project.blog.service.serviceImp.PostServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +12,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/")
 public class PostController {
-    @Autowired
-    PostRepository r;
+
     @Autowired
     PostServiceImp postService;
 
@@ -45,7 +42,6 @@ public class PostController {
         postForm.addObject("notShow","notShow");
         return postForm;
     }
-    /*
     @PostMapping("newpost")
     public ModelAndView savePost(@Valid Post post,BindingResult result ,RedirectAttributes attributes) {
         ModelAndView ret = new ModelAndView();
@@ -58,20 +54,6 @@ public class PostController {
         postService.save(new Post());
         ret.setViewName("redirect:/posts");
         return ret;
-    }*/
-    @PostMapping("newpost")
-    public ModelAndView savePost() {
-        //ModelAndView ret = new ModelAndView();
-        Post p = new Post();
-
-        r.save(p);
-
-        ModelAndView ret = new ModelAndView();
-        ret.setViewName("redirect:/posts");
-        return ret;
-
-
-        //ret.setViewName("redirect:posts");
-        //return ret;s
     }
+
 }
