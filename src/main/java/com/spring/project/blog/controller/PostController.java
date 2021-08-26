@@ -59,7 +59,7 @@ public class PostController {
         ret.setViewName("redirect:/posts");
         return ret;
     }*/
-    @PostMapping("newpostt")
+    @PostMapping("newpost")
     public void savePost() {
         //ModelAndView ret = new ModelAndView();
         Post p = new Post();
