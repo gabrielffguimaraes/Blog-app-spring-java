@@ -22,7 +22,7 @@ public class Post {
     private String autor;
 
 
-    @Column(name = "texto",columnDefinition="text")
+    @Column(name = "texto")
     private String texto;
 
 
