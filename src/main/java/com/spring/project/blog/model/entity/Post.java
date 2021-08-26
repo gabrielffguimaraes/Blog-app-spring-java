@@ -10,19 +10,17 @@ import java.time.LocalDate;
 @Table(name="tb_post")
 public class Post {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @NotBlank
     @Column(name = "titulo")
     private String titulo;
 
-    @NotBlank
+
     @Column(name = "autor")
     private String autor;
 
-    @NotBlank
     @Column(name = "texto")
     private String texto;
 
