@@ -26,9 +26,6 @@ public class Post {
     @Column(name = "texto")
     private String texto;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
-    @Column(name = "data")
-    private LocalDate data;
 
     public Long getId() {
         return id;
@@ -54,13 +51,6 @@ public class Post {
         this.autor = autor;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
 
     public String getTexto() {
         return texto;
