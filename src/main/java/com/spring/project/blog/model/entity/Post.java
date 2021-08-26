@@ -14,18 +14,21 @@ public class Post {
     @Column(name = "id")
     private Long id;
 
-
+    @NotBlank
     @Column(name = "titulo")
     private String titulo;
 
-
+    @NotBlank
     @Column(name = "autor")
     private String autor;
 
-
+    @NotBlank
     @Column(name = "texto")
     private String texto;
 
+    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
+    @Column(name = "data")
+    private LocalDate data;
 
     public Long getId() {
         return id;
@@ -49,6 +52,14 @@ public class Post {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public String getTexto() {
