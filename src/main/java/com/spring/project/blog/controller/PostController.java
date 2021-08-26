@@ -42,7 +42,7 @@ public class PostController {
         postForm.addObject("notShow","notShow");
         return postForm;
     }
-
+    /*
     @PostMapping("newpost")
     public ModelAndView savePost(@Valid Post post,BindingResult result ,RedirectAttributes attributes) {
         ModelAndView ret = new ModelAndView();
@@ -52,6 +52,14 @@ public class PostController {
             ret.setViewName("redirect:/newpost");
             return ret;
         }
+        postService.save(new Post());
+        ret.setViewName("redirect:/posts");
+        return ret;
+    }*/
+    @PostMapping("newpost")
+    public ModelAndView savePost(@Valid Post post) {
+        ModelAndView ret = new ModelAndView();
+
         postService.save(new Post());
         ret.setViewName("redirect:/posts");
         return ret;
