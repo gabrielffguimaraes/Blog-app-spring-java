@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Table(name="tb_post")
 public class Post {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column
     private Long id;
 
