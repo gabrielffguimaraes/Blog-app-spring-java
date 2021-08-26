@@ -51,7 +51,6 @@ public class PostController {
             ret.setViewName("redirect:/newpost");
             return ret;
         }
-        post.setData(null);
         postService.save(post);
         ret.setViewName("redirect:/posts");
         return ret;
