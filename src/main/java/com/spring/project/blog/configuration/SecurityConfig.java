@@ -14,7 +14,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
     public static final String[] AUTH_LIST = {
             "/",
             "/posts",
-            "/posts/{id}"
+            "/posts/{id}",
+            "/newpost"
     };
     public static final String[] IGNORE_LIST = {
             "/assets/**",
