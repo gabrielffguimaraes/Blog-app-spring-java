@@ -61,7 +61,7 @@ public class PostController {
         ModelAndView ret = new ModelAndView();
 
         postService.save(new Post());
-        ret.setViewName("redirect:/posts");
+        ret.setViewName("redirect:posts");
         return ret;
     }
 }
