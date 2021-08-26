@@ -1,6 +1,7 @@
 package com.spring.project.blog.controller;
 
 import com.spring.project.blog.model.entity.Post;
+import com.spring.project.blog.model.repository.PostRepository;
 import com.spring.project.blog.service.PostService;
 import com.spring.project.blog.service.serviceImp.PostServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class PostController {
-
+    @Autowired
+    PostRepository r;
     @Autowired
     PostServiceImp postService;
 
@@ -60,7 +62,7 @@ public class PostController {
     public void savePost(Post post) {
         //ModelAndView ret = new ModelAndView();
 
-        postService.save(new Post());
+        r.save(new Post());
         //ret.setViewName("redirect:posts");
         //return ret;
     }
