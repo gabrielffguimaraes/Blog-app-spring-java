@@ -26,7 +26,7 @@ public class Post {
     @Column(name = "texto")
     private String texto;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
+    @JsonFormat(shape= JsonFormat.Shape.STRING)
     @Column(name = "data")
     private LocalDate data;
 
