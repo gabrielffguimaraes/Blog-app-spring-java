@@ -63,6 +63,7 @@ public class PostController {
     public void savePost() {
         //ModelAndView ret = new ModelAndView();
         Post p = new Post();
+        p.setId(2l);
         r.save(p);
         //ret.setViewName("redirect:posts");
         //return ret;
