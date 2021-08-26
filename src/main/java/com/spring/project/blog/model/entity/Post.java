@@ -14,15 +14,15 @@ public class Post {
     @Column(name = "id")
     private Long id;
 
-    @NotBlank
+
     @Column(name = "titulo")
     private String titulo;
 
-    @NotBlank
+
     @Column(name = "autor")
     private String autor;
 
-    @NotBlank
+
     @Column(name = "texto")
     private String texto;
 
