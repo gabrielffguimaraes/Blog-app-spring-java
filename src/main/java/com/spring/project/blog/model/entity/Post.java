@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="TB_POST")
+@Table(name="tb_post")
 public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
