@@ -60,14 +60,19 @@ public class PostController {
         return ret;
     }*/
     @PostMapping("newpost")
-    public void savePost() {
+    public ModelAndView savePost() {
         //ModelAndView ret = new ModelAndView();
         Post p = new Post();
         p.setId(1l);
         p.setAutor("adsa");
         p.setTexto("dsad");
         p.setTitulo("sadasd");
-        r.save(p);
+
+        ModelAndView ret = new ModelAndView();
+        ret.setViewName("redirect:/posts");
+        return ret;
+
+
         //ret.setViewName("redirect:posts");
         //return ret;s
     }

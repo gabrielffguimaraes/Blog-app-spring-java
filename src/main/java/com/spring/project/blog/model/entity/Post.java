@@ -14,6 +14,9 @@ public class Post {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "texto")
+    private String texto;
+
     @Column(name = "titulo")
     private String titulo;
 
@@ -22,8 +25,7 @@ public class Post {
     private String autor;
 
 
-    @Column(name = "texto")
-    private String texto;
+
 
 
     public Long getId() {
