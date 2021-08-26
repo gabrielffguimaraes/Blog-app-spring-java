@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Table(name="TB_POST")
 public class Post {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -23,10 +23,10 @@ public class Post {
     private String autor;
 
     @NotBlank
-    @Column(name = "texto",columnDefinition = "text")
+    @Column(name = "texto")
     private String texto;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="yyyy-dd-MM")
+    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="dd-MM-yyyy")
     @Column(name = "data")
     private LocalDate data;
 
