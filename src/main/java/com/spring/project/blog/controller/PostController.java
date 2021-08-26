@@ -64,6 +64,9 @@ public class PostController {
         //ModelAndView ret = new ModelAndView();
         Post p = new Post();
         p.setId(1l);
+        p.setAutor("adsa");
+        p.setTexto("dsad");
+        p.setTitulo("sadasd");
         r.save(p);
         //ret.setViewName("redirect:posts");
         //return ret;s

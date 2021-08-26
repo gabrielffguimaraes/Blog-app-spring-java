@@ -47,19 +47,7 @@
         </nav>
         <div>
             <form method="post">
-                <div class="alert alert-danger" role="alert" th:if='${(errors !=null) ? !errors.equals("") : null}'>
-                    <span th:text=${errors}></span>
-                </div>
-                <div class="form-group mb-3">
-                    <input type="text" class="form-control" name="titulo" placeholder="Titulo *">
-                </div>
-                <div class="form-group mb-3">
-                    <input type="text" class="form-control" name="autor" placeholder="Autor *">
-                </div>
-                <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
-                <p>
-                    <small class="form-text text-muted"> (*) Campos Obrigatórios </small>
-                </p>
+
                 <button type="submit" class="btn btn-primary"> Publicar </button>&nbsp;
                 <a href="/posts" class="btn btn-light" role="button">Cancelar</a>
             </form>
