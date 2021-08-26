@@ -13,54 +13,14 @@ public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
-    private BigInteger id;
-
-    @Column(name = "texto")
-    private String texto;
-
-    @Column(name = "titulo")
-    private String titulo;
-
-
-    @Column(name = "autor")
-    private String autor;
+    private Long id;
 
 
 
 
 
-    public BigInteger getId() {
-        return id;
-    }
-
-    public void setId(BigInteger id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
 
 
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
 
 
 }

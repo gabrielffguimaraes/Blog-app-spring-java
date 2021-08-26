@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.math.BigInteger;
 
 @Repository
-public interface PostRepository extends JpaRepository<Post, BigInteger> {
+public interface PostRepository extends JpaRepository<Post, Long> {
 
 }
