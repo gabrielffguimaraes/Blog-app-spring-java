@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.math.BigInteger;
 import java.time.LocalDate;
 
 @Entity
@@ -12,7 +13,7 @@ public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private BigInteger id;
 
     @Column(name = "texto")
     private String texto;
@@ -28,11 +29,11 @@ public class Post {
 
 
 
-    public Long getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
