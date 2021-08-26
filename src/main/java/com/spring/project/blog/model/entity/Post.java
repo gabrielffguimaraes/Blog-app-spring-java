@@ -5,10 +5,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
-@Table(name="tb_post")
+@Table(name="TB_POST")
 public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -27,8 +26,9 @@ public class Post {
     @Column(name = "texto")
     private String texto;
 
+    @JsonFormat(shape= JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
     @Column(name = "data")
-    private String data;
+    private LocalDate data;
 
     public Long getId() {
         return id;
@@ -54,11 +54,11 @@ public class Post {
         this.autor = autor;
     }
 
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
