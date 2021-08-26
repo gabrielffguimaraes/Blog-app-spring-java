@@ -2,6 +2,7 @@ package com.spring.project.blog.controller;
 
 import com.spring.project.blog.model.entity.Post;
 import com.spring.project.blog.service.PostService;
+import com.spring.project.blog.service.serviceImp.PostServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +19,7 @@ import java.util.List;
 public class PostController {
 
     @Autowired
-    PostService postService;
+    PostServiceImp postService;
 
     @GetMapping("posts")
     public ModelAndView getPosts() {
