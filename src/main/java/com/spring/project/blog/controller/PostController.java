@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -61,8 +62,9 @@ public class PostController {
     @PostMapping("newpost")
     public void savePost() {
         //ModelAndView ret = new ModelAndView();
-
-        r.save(new Post());
+        Post p = new Post();
+        p.setData(new Date());
+        r.save(p);
         //ret.setViewName("redirect:posts");
         //return ret;
     }
