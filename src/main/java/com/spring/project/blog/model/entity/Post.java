@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Table(name="TB_POST")
 public class Post {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
