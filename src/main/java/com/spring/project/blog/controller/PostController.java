@@ -59,7 +59,7 @@ public class PostController {
         return ret;
     }*/
     @PostMapping("newpost")
-    public void savePost(Post post) {
+    public void savePost() {
         //ModelAndView ret = new ModelAndView();
 
         r.save(new Post());
